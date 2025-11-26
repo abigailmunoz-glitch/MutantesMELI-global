@@ -83,6 +83,3 @@ git clone https://github.com/TomCab98/utn-mutant-analyzer.git
 ```
 http://localhost:8080/h2-console
 ```
-
-
-<img width="604" height="290" alt="muestra de que se creó libs" src="https://github.com/user-attachments/assets/c7bfdb50-08da-4fdf-b5a7-efe2a0b35a7
