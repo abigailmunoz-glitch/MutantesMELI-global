@@ -1,19 +1,42 @@
+Aquí tenés un **README formal, corto, sin emojis**, incluyendo: tecnologías utilizadas, explicación sintética de los tres niveles, uso de librerías del *build*, y referencia al diagrama de secuencia.
+
+---
+
 # Mutant Analyzer – UTN
 
-El presente proyecto implementa un sistema de análisis de secuencias de ADN utilizando Spring Boot, con el objetivo de determinar si un individuo corresponde a un mutante según los criterios establecidos en la consigna. La solución aborda de manera completa los tres niveles requeridos: lógica de detección, exposición mediante API REST y persistencia con generación de estadísticas.
+Proyecto desarrollado en **Spring Boot** para el análisis de secuencias de ADN, con el objetivo de determinar si corresponden a un mutante. La solución integra lógica de detección, API REST y persistencia con estadísticas, cumpliendo con los tres niveles establecidos en la consigna.
+
+## Tecnologías utilizadas
+
+* **Java 17**
+* **Spring Boot** (Web, Data JPA, Validation)
+* **H2 Database** para persistencia en memoria
+* **Gradle** como gestor de dependencias
+* **JUnit y Mockito** para pruebas automáticas
+* **Lombok** para reducir boilerplate
+* **Spring Boot Starter Test** para testing de integración
+
+## Dependencias principales (build.gradle)
+
+El proyecto utiliza, entre otras, las siguientes librerías:
+
+* `spring-boot-starter-web`: estructura de API REST.
+* `spring-boot-starter-data-jpa`: acceso y mapeo a base de datos.
+* `com.h2database:h2`: motor de base de datos en memoria.
+* `lombok`: generación automática de getters, setters y constructores.
+* `spring-boot-starter-test`: herramientas de testing.
 
 ## Nivel 1 – Lógica de detección
 
-Se desarrolla un algoritmo que evalúa matrices de ADN de tamaño NxN, identificando la presencia de más de una secuencia de cuatro caracteres idénticos consecutivos en dirección horizontal, vertical o diagonal.
-El método retorna un valor booleano que indica si la secuencia corresponde a un mutante.
+Se implementa un algoritmo que analiza una matriz de ADN (NxN) y determina si existen más de una secuencia de cuatro caracteres iguales consecutivos en sentido horizontal, vertical o diagonal. El método retorna un valor booleano que clasifica la secuencia como mutante o humana.
 
 ## Nivel 2 – API REST
 
-Se expone un servicio REST destinado a recibir secuencias de ADN y determinar su clasificación.
+Se expone un servicio HTTP que recibe la secuencia de ADN en formato JSON.
 
-### Endpoint: POST /mutant/analizar
+### POST /mutant/analizar
 
-**Ejemplo de solicitud:**
+Solicitud:
 
 ```json
 {
@@ -21,55 +44,53 @@ Se expone un servicio REST destinado a recibir secuencias de ADN y determinar su
 }
 ```
 
-**Respuestas esperadas:**
+Respuestas:
 
-* **200 OK**: El ADN corresponde a un mutante.
-* **403 Forbidden**: El ADN pertenece a un humano.
+* **200 OK:** mutante
+* **403 Forbidden:** humano
 
-La aplicación está preparada para su despliegue en plataformas cloud gratuitas como Render.
+El proyecto está preparado para despliegue en plataformas cloud gratuitas como Render.
 
 ## Nivel 3 – Persistencia y estadísticas
 
-Se incorpora una base de datos H2 para registrar cada secuencia analizada, garantizando un único registro por ADN. Se almacena la condición (mutante/humano) resultante del análisis.
+Se integra una base de datos **H2** para registrar cada secuencia analizada, asegurando un único registro por ADN.
+Se incorpora el endpoint:
 
-### Endpoint: GET /stats
+### GET /stats
 
-**Ejemplo de respuesta:**
+Retorna la cantidad de ADN mutante, humano y el ratio entre ambos valores.
 
-```json
-{
-  "count_mutant_dna": 40,
-  "count_human_dna": 100,
-  "ratio": 0.4
-}
+## Diagrama de secuencia
+
+El repositorio incluye el diagrama de secuencia correspondiente al flujo completo del endpoint `/mutant/analizar`.
+
 ```
-
-El proyecto incluye pruebas automáticas y una cobertura superior al 80%. Asimismo, se presenta el diagrama de secuencia correspondiente al flujo de procesamiento:
-
-### Diagrama de secuencia
-
-<img width="815" height="741" alt="diag de secuencia" src="https://github.com/user-attachments/assets/80b5bd6b-dbf5-4a9c-834d-5ba7c2459884" />
+sequence-diagram.png
+```
 
 ## Ejecución
 
-### 1. Clonar el repositorio
+1. Clonar el repositorio:
 
 ```bash
 git clone https://github.com/TomCab98/utn-mutant-analyzer.git
 ```
 
-### 2. Ejecutar la aplicación
+2. Ejecutar la aplicación:
 
 ```bash
 ./gradlew bootRun
 ```
 
-### 3. Acceso a la consola H2 (opcional)
+3. Acceso opcional a H2:
 
 ```
 http://localhost:8080/h2-console
 ```
 
 ---
+También acá adjunto el diagrama de secuencias y una captura de pantalla de libs, que es el resultado de darle una instrucción a la terminal (ya que era muy pesado apara subirlo todo):
 
-Si deseás, puedo generar también una versión aún más técnica, o un formato estilo informe académico.
+<img width="815" height="741" alt="diag de secuencia" src="https://github.com/user-attachments/assets/c2215c0d-7f1d-4935-8c54-41fb6624f265" />
+
+<img width="604" height="290" alt="muestra de que se creó libs" src="https://github.com/user-attachments/assets/c7bfdb50-08da-4fdf-b5a7-efe2a0b35a7e" />
