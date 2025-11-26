@@ -84,9 +84,5 @@ git clone https://github.com/TomCab98/utn-mutant-analyzer.git
 http://localhost:8080/h2-console
 ```
 
----
-También acá adjunto el diagrama de secuencias y una captura de pantalla de libs, que es el resultado de darle una instrucción a la terminal (ya que era muy pesado apara subirlo todo):
 
-<img width="815" height="741" alt="diag de secuencia" src="https://github.com/user-attachments/assets/c2215c0d-7f1d-4935-8c54-41fb6624f265" />
-
-<img width="604" height="290" alt="muestra de que se creó libs" src="https://github.com/user-attachments/assets/c7bfdb50-08da-4fdf-b5a7-efe2a0b35a7e" />
+<img width="604" height="290" alt="muestra de que se creó libs" src="https://github.com/user-attachments/assets/c7bfdb50-08da-4fdf-b5a7-efe2a0b35a7
