@@ -56,14 +56,6 @@ Se incorpora el endpoint:
 
 Retorna la cantidad de ADN mutante, humano y el ratio entre ambos valores.
 
-## Diagrama de secuencia
-
-El repositorio incluye el diagrama de secuencia correspondiente al flujo completo del endpoint `/mutant/analizar`.
-
-```
-sequence-diagram.png
-```
-
 ## Ejecución
 
 1. Clonar el repositorio:
