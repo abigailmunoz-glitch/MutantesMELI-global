@@ -69,7 +69,7 @@ sequence-diagram.png
 1. Clonar el repositorio:
 
 ```bash
-git clone https://github.com/TomCab98/utn-mutant-analyzer.git
+https://github.com/abigailmunoz-glitch/MutantesMELI-global.git
 ```
 
 2. Ejecutar la aplicación:
