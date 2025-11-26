@@ -1,7 +1,3 @@
-Aquí tenés un **README formal, corto, sin emojis**, incluyendo: tecnologías utilizadas, explicación sintética de los tres niveles, uso de librerías del *build*, y referencia al diagrama de secuencia.
-
----
-
 # Mutant Analyzer – UTN
 
 Proyecto desarrollado en **Spring Boot** para el análisis de secuencias de ADN, con el objetivo de determinar si corresponden a un mutante. La solución integra lógica de detección, API REST y persistencia con estadísticas, cumpliendo con los tres niveles establecidos en la consigna.
