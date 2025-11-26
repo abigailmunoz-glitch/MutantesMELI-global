@@ -61,7 +61,7 @@ Retorna la cantidad de ADN mutante, humano y el ratio entre ambos valores.
 1. Clonar el repositorio:
 
 ```bash
-git clone https://github.com/TomCab98/utn-mutant-analyzer.git
+https://github.com/abigailmunoz-glitch/MutantesMELI-global.git
 ```
 
 2. Ejecutar la aplicación:
